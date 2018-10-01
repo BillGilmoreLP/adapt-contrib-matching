@@ -214,7 +214,7 @@ define([
             this.$('select').each(function addErrorClass(index, element) {
                 if (element.selectedIndex < 1) {
                     var $element = $(element);
-                    var $container = $element.parents('.matching-select-container');
+                    var $container = $element.parents('.matching__select-container');
                     $container.addClass('error');
                     // ensure the error class gets removed when the user selects a valid option
                     var evt = "select2:select.errorclear";
@@ -237,7 +237,7 @@ define([
 
             _.each(this.model.get('_items'), function(item, index) {
 
-                var $selectedOption = this.$('.matching-select option:selected').eq(index);
+                var $selectedOption = this.$('.matching__select option:selected').eq(index);
                 var optionIndex = $selectedOption.index() - 1;
 
                 item._options[optionIndex]._isSelected = true;
@@ -301,7 +301,7 @@ define([
 
             _.each(this.model.get('_items'), function(item, i) {
 
-                var $item = this.$('.matching-item').eq(i);
+                var $item = this.$('.matching__item').eq(i);
                 $item.removeClass('correct incorrect').addClass(item._isCorrect ? 'correct' : 'incorrect');
             }, this);
         },
@@ -316,7 +316,7 @@ define([
 
         resetQuestion: function() {
 
-            this.$('.matching-item').removeClass('correct incorrect');
+            this.$('.matching__item').removeClass('correct incorrect');
 
             this.model.set('_isAtLeastOneCorrectSelection', false);
 

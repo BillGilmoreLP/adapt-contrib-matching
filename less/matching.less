@@ -1,14 +1,14 @@
 .matching-component {
 
-	.matching-item {
+	.matching__item {
 		padding-bottom: @item-padding-bottom;
 	}
 
-	.matching-item-title {
+	.matching__item-title {
 		margin-bottom: @item-margin-bottom;
 	}
 
-	.matching-select-container {
+	.matching__select-container {
 		position: relative;
 		background-color: @item-color;
 
@@ -22,7 +22,7 @@
 		}
 	}
 
-	.matching-select-state {
+	.matching__select-state {
 		position: absolute;
 		width: @icon-size;
 		height: @icon-size;
@@ -36,16 +36,16 @@
 			left: 10px;
 		}
 
-		.matching-select-icon {
+		.matching__select-icon {
 			color: @item-text-color;
 		}
 
-		.matching-correct-icon {
+		.matching__select-icon--correct {
 			color: @validation-success;
 			display: none;
 		}
 
-		.matching-incorrect-icon {
+		.matching__select-icon--incorrect {
 			color: @validation-error;
 			display: none;
 		}
@@ -125,33 +125,33 @@
 
 	}
 
-	.matching-widget {
+	.matching__widget {
 
 		&.submitted {
-			.matching-select {
+			.matching__select {
 				cursor: default
 			}
-			.matching-select-container {
+			.matching__select-container {
 				background-color: @item-color-disabled;
 			}
 
-			.matching-select-state {
+			.matching__select-state {
 				z-index: 1;
 			}
 		}
 
 		&.show-user-answer {
 			.select2-selection__arrow,
-			.matching-select-icon {
+			.matching__select-icon {
 				display: none;
 			}
 			.incorrect {
-				.matching-incorrect-icon {
+				.matching__select-icon--incorrect {
 					display: block;
 				}
 			}
 			.correct {
-				.matching-correct-icon {
+				.matching__select-icon--correct {
 					display: block;
 				}
 			}
@@ -159,11 +159,11 @@
 
 		&.show-correct-answer {
 			.select2-selection__arrow,
-			.matching-select-icon {
+			.matching__select-icon {
 				display: none;
 			}
-			.incorrect .matching-correct-icon,
-			.correct .matching-correct-icon {
+			.incorrect .matching__select-icon--correct,
+			.correct .matching__select-icon--correct {
 				display: block;
 			}
 		}
@@ -173,12 +173,12 @@
 }
 
 .no-touch {
-	.matching-select-icon {
+	.matching__select-icon {
 		&:hover {
 			color: @item-text-color-hover;
 		}
 	}
-	.matching-select-container {
+	.matching__select-container {
 		&:hover {
 			color: @button-text-color-hover;
 			background-color: @item-color-hover;
@@ -187,7 +187,7 @@
 }
 
 .ie8 {
-	.matching-select-container {
+	.matching__select-container {
 		&.disabled {
 			background-color: @item-color-disabled;
 		}
@@ -229,8 +229,8 @@
 	}
 }
 
-.accessibility.no-touch .matching-component .matching-widget.disabled .select2-container.select2-container--focus,
-.accessibility.no-touch .matching-widget.disabled .select2.select2-container *:focus {
+.accessibility.no-touch .matching-component .matching__widget.disabled .select2-container.select2-container--focus,
+.accessibility.no-touch .matching__widget.disabled .select2.select2-container *:focus {
 	outline: 0;
 }
 
